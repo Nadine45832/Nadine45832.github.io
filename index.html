@@ -21,6 +21,7 @@
             background-color: oklab(0 0 0);
             font-family: "Libre Franklin", sans-serif, Arial, Helvetica;
             font-display: block;
+            --timeline-text-color: #0e7c78;
         }
 
         * {
@@ -102,6 +103,238 @@
             outline: none;
             
         }
+        @media (max-width: 620px) {
+            .links-button-wraper {
+                flex-direction: column;
+            }
+            .about-content > p {
+                font-size: 1rem;
+            }
+            .about-content {
+                margin-block-end: -6rem;
+            }
+        }
+          
+        .timeline {
+            position: relative;
+            max-width: 860px;
+            width: 100%;
+            margin: 0px auto;
+            padding: 20px;
+            list-style-type: none;
+            box-sizing: content-box;
+        }
+        @media (max-width: 860px) {
+            .timeline {
+                padding: 4em 0 1em 0;
+            }
+        }
+        .timeline:before {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            content: " ";
+            display: block;
+            width: 2px;
+            height: 100%;
+            margin-left: -1px;
+            background: #f8f8f8;
+            z-index: 5;
+        }
+        .timeline li {
+            padding: 1em 0;
+            overflow: hidden;
+        }
+
+        @media (max-width: 860px) {
+            .timeline li {
+                padding: 3em 0;
+            }
+        }
+          
+        .direction-l {
+            position: relative;
+            width: 400px;
+            float: left;
+            text-align: right;
+        }
+        @media (max-width: 860px) {
+            .direction-l {
+                float: none;
+                width: 100%;
+                text-align: center;
+            }
+        }
+        /* .direction-l .flag {
+            box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15);
+        } */
+        .direction-l .flag:after {
+            content: "";
+            position: absolute;
+            left: 100%;
+            top: 50%;
+            height: 0;
+            width: 0;
+            margin-top: -8px;
+            border: solid transparent;
+            border-left-color: #f8f8f8;
+            border-width: 8px;
+            pointer-events: none;
+        }
+
+        .direction-l .time-wrapper {
+            float: left;
+        }
+        @media (max-width: 860px) {
+            .direction-l .time-wrapper {
+                float: none;
+            }
+        }
+          
+        .direction-r {
+            position: relative;
+            width: 400px;
+            float: right;
+        }
+        @media (max-width: 860px) {
+            .direction-r {
+                float: none;
+                width: 100%;
+                text-align: center;
+            }
+        }
+        /* .direction-r .flag {
+            box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+        } */
+        .direction-r .flag:after {
+            content: "";
+            position: absolute;
+            right: 100%;
+            top: 50%;
+            height: 0;
+            width: 0;
+            margin-top: -8px;
+            border: solid transparent;
+            border-right-color: #f8f8f8;
+            border-width: 8px;
+            pointer-events: none;
+        }
+
+        .direction-r .flag:before {
+            left: -40px;
+        }
+        .direction-r .time-wrapper {
+            float: right;
+        }
+        @media (max-width: 860px) {
+            .direction-r .time-wrapper {
+                float: none;
+            }
+        }
+        @media (max-width: 860px) {
+            .direction-l .flag:after, .direction-r .flag:after {
+                content: "";
+                position: absolute;
+                left: 50%;
+                top: -7px;
+                height: 0;
+                width: 0;
+                margin-left: -8px;
+                border: solid transparent;
+                border-bottom-color: white;
+                border-width: 8px;
+                pointer-events: none;
+            }
+        }
+        .flag-wrapper {
+            position: relative;
+            display: inline-block;
+            text-align: center;
+        }
+        @media (max-width: 860px) {
+            .flag-wrapper {
+                text-align: center;
+                color: var(--timeline-text-color);
+            }
+        }
+        .flag-wrapper .flag {
+            position: relative;
+            display: inline;
+            padding: 6px 10px;
+            font-weight: 600;
+            text-align: left;
+        }
+        @media (max-width: 860px) {
+            .flag-wrapper .flag {
+                background: white;
+                z-index: 15;
+            }
+        }
+          
+        .direction-l .flag:before,
+        .direction-r .flag:before {
+            position: absolute;
+            top: 50%;
+            right: -40px;
+            content: " ";
+            display: block;
+            width: 12px;
+            height: 12px;
+            margin-top: -10px;
+            background: #fff;
+            border-radius: 10px;
+            border: 4px solid #318683;
+            z-index: 10;
+        }
+        @media (max-width: 860px) {
+            .direction-l .flag:before,
+            .direction-r .flag:before {
+                position: absolute;
+                top: -30px;
+                left: 50%;
+                content: " ";
+                display: block;
+                margin-left: -10px;
+            }
+        }
+          
+        .time-wrapper {
+            display: inline;
+            line-height: 1em;
+            font-size: 0.66666em;
+            color: var(--timeline-text-color);
+            vertical-align: middle;
+        }
+        @media (max-width: 860px) {
+            .time-wrapper {
+                display: block;
+                position: relative;
+                margin: 4px 0 0 0;
+                z-index: 14;
+            }
+        }
+        .time-wrapper .time {
+            display: inline-block;
+            padding: 4px 6px;
+            background: #f8f8f8;
+        }
+          
+        .desc {
+            margin: 1em 0.75em 0 0;
+            font-size: 0.9em;
+            line-height: 1.5em;
+        }
+        @media (max-width: 860px) {
+            .desc {
+                position: relative;
+                margin: 1em 1em 0 1em;
+                padding: 1em;
+                background: whitesmoke;
+                box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+                z-index: 15;
+                color: var(--timeline-text-color);
+            }
+        }
 
     </style>
 </head>
@@ -163,6 +396,104 @@
                 </div>
             </div>
         </div>
+        <p>Work Experience</p>
+
+        <ul class="timeline">
+
+            <li>
+            <div class="direction-r">
+                <div class="flag-wrapper">
+                    <span class="flag">Just Web Agency, Toronto, ON</span>
+                    <span class="time-wrapper"><span class="time">2022 - 2024</span></span>
+                </div>
+                <div class="desc">
+                    Developing and maintaining a task management system that collects and exports data from/to multiple sources. 
+                    Increased customer leads by 40% by developing a market outreach product. 
+                    Designed and built a business aggregator platform that features user-friendly custom web applications for company 
+                    profiles. This platform empowers businesses to efficiently manage their own profiles and offers a streamlined search function for users to easily find and claim businesses.
+                    <br>
+                    <strong>Technology stack:</strong> CSS, SASS, React, Formik, Bulma, Yup, Python, FastAPI, Node.js, Next.js, MongoDB, PostgreSQL, Docker, SQLModel, S3 and Express, GitHub Actions;
+                </div>
+            </div>
+            </li>
+        
+            <li>
+            <div class="direction-l">
+                <div class="flag-wrapper">
+                    <span class="flag">VOLHA, Warsaw, Poland</span>
+                    <span class="time-wrapper"><span class="time">March 2022 - April 2022</span></span>
+                </div>
+                <div class="desc">
+                    Developed scripts to automate the deployment and maintenance of public cloud resources. Utilized unit testing and other methods to enhance quality.
+                    Wrote new code from scratch for projects ( with Django and Flask frameworks), implementing best practices and design patterns to improve code quality and maintainability.
+                    <br>
+                    <strong>Technology stack:</strong> CSS, React, Python, Flask, Django, PostgreSQL, Docker, SQLModel, GitHub Actions;
+                </div>
+            </div>
+            </li>
+            <li>
+                <div class="direction-r">
+                    <div class="flag-wrapper">
+                        <span class="flag">Yandex School of Data Analysis</span>
+                        <span class="time-wrapper"><span class="time">2021 - 2022</span></span>
+                    </div>
+                    <div class="desc">
+                        Proven ability to adapt to new technologies and work in a fast-paced environment. Worked with back-end Development Infrastructure (Docker, WSGI, Gunicorn, NGINX). 
+                        Implemented CI/CD for my projects with GitHub Actions. Developed a Telegram bot that checks the status changes of different services. 
+                        Created tests for projects using Unittest and PyTest framework. 
+                        Optimized SQL queries for manipulating big chunks of data. 
+                        Developed projects with Django framework and REST API.
+                        <br>
+                        <strong>Technology stack:</strong> CSS, React, Python, Flask, Django, PostgreSQL, Docker, SQLModel, PyTest, GitHub Actions;
+                    </div>
+                </div>
+                </li>
+                <li>
+                    <div class="direction-l">
+                        <div class="flag-wrapper">
+                            <span class="flag">Education</span>
+                            <span class="time-wrapper"><span class="time">2022</span></span>
+                        </div>
+                        <div class="desc">
+                            Meta Front-End Developer Professional Certificate, Meta
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="direction-r">
+                        <div class="flag-wrapper">
+                            <span class="flag">Education</span>
+                            <span class="time-wrapper"><span class="time">2021 - 2022</span></span>
+                        </div>
+                        <div class="desc">
+                            Python Developer professional training course, Yandex School of Data Analysis, Minsk, Belarus
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="direction-l">
+                        <div class="flag-wrapper">
+                            <span class="flag">Education</span>
+                            <span class="time-wrapper"><span class="time">2019</span></span>
+                        </div>
+                        <div class="desc">
+                            Accredited course on business analysis in software development (IQBBA certificate) JLBG, Educational Center of High-Tech Park, Minsk
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="direction-r">
+                        <div class="flag-wrapper">
+                            <span class="flag">Education</span>
+                            <span class="time-wrapper"><span class="time">2012 - 2015</span></span>
+                        </div>
+                        <div class="desc">
+                            Honours Bachelor's degree in Economics with advanced mathematics and statistics, The Higher State College of Communications, Minsk
+                        </div>
+                    </div>
+                </li>
+        </ul>
+  
     </main>
 </body>
 <script type="module">
